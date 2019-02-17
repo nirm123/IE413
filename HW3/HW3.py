@@ -9,7 +9,7 @@ five_wait_time = 0
 twenty_wait_time = 0
 
 for i in range(5):
-    file_name = 'HW3_RUN' + str(i+1) + '.csv'
+    file_name = 'HW3_NO3_RUN' + str(i+1) + '.csv'
     df = pandas.read_csv(file_name)
     df = df.drop(df.index[len(df)-1])
     df = df.drop(df.columns[df.columns.str.contains('unnamed',case=False)],axis=1)
