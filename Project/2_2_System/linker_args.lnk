@@ -1,0 +1,8 @@
+name BLAZE.exe
+file BLAZE.obj
+option quiet
+libpath C:\PROGRA~2\BIOPRO~1\Sigma\Libs\std_lib
+libpath C:\Users\nirma\DOCUME~1\IE413\Project\2_2_SY~1\
+library kernel32,user32,advapi32,Sigmalib
+format windows nt ^
+runtime console=4.0

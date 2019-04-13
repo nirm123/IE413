@@ -1,0 +1,141 @@
+    Time	  Event	 Count	  SERVICE[ID[7]]	   SYSTEM[ID[7]]	          RATIO[0] 
+    5.859	 DELIVER	     1 	   1.69 	   5.86 	      0 
+    6.389	 DELIVER	     2 	  0.752 	   4.23 	      0 
+   11.143	 DELIVER	     3 	   0.98 	   6.52 	      0 
+   12.033	 DELIVER	     4 	   2.06 	    6.8 	      0 
+   19.622	 DELIVER	     5 	  0.639 	   4.81 	      0 
+   22.096	 DELIVER	     6 	  0.802 	   7.98 	      0 
+   24.748	 DELIVER	     7 	    2.8 	   9.52 	      0 
+   36.675	 DELIVER	     8 	   2.72 	    9.4 	      0 
+   38.514	 DELIVER	     9 	   2.45 	      9 	      0 
+   38.567	 DELIVER	    10 	   2.66 	   7.84 	      0 
+   38.773	 DELIVER	    11 	   1.08 	   7.94 	      0 
+   40.161	 DELIVER	    12 	   1.15 	   7.17 	      0 
+   46.039	 DELIVER	    13 	   2.28 	   9.75 	      0 
+   46.911	 DELIVER	    14 	  0.877 	   6.93 	      0 
+   49.841	 DELIVER	    15 	   1.22 	   5.29 	      0 
+   52.419	 DELIVER	    16 	   1.88 	   7.85 	      0 
+   59.972	 DELIVER	    17 	   1.06 	   6.98 	      0 
+   62.338	 DELIVER	    18 	   2.11 	   8.58 	      0 
+   63.318	 DELIVER	    19 	   2.56 	   10.2 	      0 
+   64.322	 DELIVER	    20 	  0.766 	   6.82 	      0 
+   65.385	 DELIVER	    21 	  0.977 	   7.81 	      0 
+   65.410	 DELIVER	    22 	   1.99 	   7.76 	      0 
+   67.291	 DELIVER	    23 	   1.41 	    9.2 	      0 
+   68.253	 DELIVER	    24 	   2.95 	     10 	      0 
+   69.064	 DELIVER	    25 	   1.68 	   9.39 	      0 
+   69.524	 DELIVER	    26 	   1.85 	   8.98 	      0 
+   69.559	 DELIVER	    27 	   2.92 	   8.38 	      0 
+   70.481	 DELIVER	    28 	   2.68 	   9.04 	      0 
+   70.641	 DELIVER	    29 	   2.48 	   8.66 	      0 
+   72.897	 DELIVER	    30 	  0.753 	   9.68 	      0 
+   73.127	 DELIVER	    31 	   1.59 	   9.17 	      0 
+   73.308	 DELIVER	    32 	   2.42 	   8.25 	      0 
+   75.713	 DELIVER	    33 	   1.41 	   9.76 	      0 
+   76.331	 DELIVER	    34 	   1.74 	   9.84 	      0 
+   78.248	 DELIVER	    35 	   2.26 	   11.2 	      0 
+   78.556	 DELIVER	    36 	   2.53 	     11 	      0 
+   79.013	 DELIVER	    37 	    2.8 	   11.2 	      0 
+   80.772	 DELIVER	    38 	   1.59 	     12 	      0 
+   82.008	 DELIVER	    39 	   1.49 	   13.2 	      0 
+   82.208	 DELIVER	    40 	   1.24 	   11.9 	      0 
+   82.880	 DELIVER	    41 	   1.81 	   12.5 	      0 
+   83.648	 DELIVER	    42 	   1.93 	   12.6 	      0 
+   84.441	 DELIVER	    43 	   2.73 	   13.3 	      0 
+   85.226	 DELIVER	    44 	   1.55 	   12.9 	      0 
+   88.646	 DELIVER	    45 	   1.11 	   15.9 	      0 
+   89.173	 DELIVER	    46 	    1.5 	   15.9 	      0 
+   89.612	 DELIVER	    47 	   2.03 	   13.8 	      0 
+   90.689	 DELIVER	    48 	   2.43 	   14.7 	      0 
+   91.152	 DELIVER	    49 	   1.41 	   14.5 	      0 
+   91.290	 DELIVER	    50 	   1.91 	   14.5 	      0 
+   92.813	 DELIVER	    51 	   2.44 	   15.7 	      0 
+   94.240	 DELIVER	    52 	   2.16 	   16.6 	      0 
+   94.364	 DELIVER	    53 	   1.41 	   16.3 	      0 
+   97.040	 DELIVER	    54 	  0.394 	   18.3 	      0 
+   99.159	 DELIVER	    55 	  0.464 	   17.1 	      0 
+   99.395	 DELIVER	    56 	   2.95 	   16.8 	      0 
+  100.346	 DELIVER	    57 	   1.44 	   10.6 	      0 
+  101.257	 DELIVER	    58 	   0.55 	   10.8 	      0 
+  101.988	 DELIVER	    59 	   2.05 	   10.6 	      0 
+  106.113	 DELIVER	    60 	   2.48 	   8.13 	      0 
+  108.058	 DELIVER	    61 	  0.457 	   5.25 	      0 
+  111.954	 DELIVER	    62 	   2.27 	   8.05 	      0 
+  113.164	 DELIVER	    63 	   1.19 	   6.44 	      0 
+  117.541	 DELIVER	    64 	   2.25 	    9.5 	      0 
+  122.308	 DELIVER	    65 	   2.29 	   5.61 	      0 
+  125.493	 DELIVER	    66 	  0.491 	   7.87 	      0 
+  128.480	 DELIVER	    67 	  0.815 	   11.5 	      0 
+  128.718	 DELIVER	    68 	   2.09 	   11.5 	      0 
+  129.431	 DELIVER	    69 	  0.491 	    122 	      0 
+  130.504	 DELIVER	    70 	  0.669 	   12.5 	      0 
+  132.775	 DELIVER	    71 	   1.11 	   12.7 	      0 
+  133.407	 DELIVER	    72 	  0.908 	   12.8 	      0 
+  133.943	 DELIVER	    73 	   2.57 	   12.8 	      0 
+  135.698	 DELIVER	    74 	  0.698 	   14.3 	      0 
+  136.227	 DELIVER	    75 	  0.839 	   14.8 	      0 
+  137.310	 DELIVER	    76 	  0.404 	   15.7 	      0 
+  138.425	 DELIVER	    77 	   2.49 	   15.8 	      0 
+  142.480	 DELIVER	    78 	   1.64 	   19.4 	      0 
+  142.669	 DELIVER	    79 	   2.73 	   17.6 	      0 
+  143.213	 DELIVER	    80 	  0.489 	   18.2 	      0 
+  144.596	 DELIVER	    81 	   2.89 	   19.2 	      0 
+  145.916	 DELIVER	    82 	  0.991 	   18.3 	      0 
+  147.607	 DELIVER	    83 	   1.74 	   17.6 	      0 
+  149.156	 DELIVER	    84 	   1.32 	   18.4 	      0 
+  149.960	 DELIVER	    85 	  0.981 	   18.8 	      0 
+  152.696	 DELIVER	    86 	   1.03 	   21.1 	      0 
+  155.972	 DELIVER	    87 	    2.6 	   24.2 	      0 
+  156.330	 DELIVER	    88 	   1.97 	   23.8 	      0 
+  157.559	 DELIVER	    89 	   2.48 	   24.4 	      0 
+  159.949	 DELIVER	    90 	  0.419 	   26.5 	      0 
+  160.581	 DELIVER	    91 	   1.29 	   26.8 	      0 
+  162.991	 DELIVER	    92 	   2.65 	   29.1 	      0 
+  163.472	 DELIVER	    93 	   1.51 	   28.7 	      0 
+  163.711	 DELIVER	    94 	   1.34 	   27.4 	      0 
+  164.006	 DELIVER	    95 	  0.517 	   27.5 	      0 
+  164.408	 DELIVER	    96 	   2.83 	   27.4 	      0 
+  169.932	 DELIVER	    97 	   1.26 	   32.4 	      0 
+  170.137	 DELIVER	    98 	  0.797 	   32.6 	      0 
+  173.688	 DELIVER	    99 	   1.85 	   35.1 	      0 
+  174.101	 DELIVER	   100 	  0.848 	   35.2 	      0 
+  174.777	 DELIVER	   101 	   2.91 	   35.7 	      0 
+  174.894	 DELIVER	   102 	  0.372 	   35.6 	      0 
+  175.825	 DELIVER	   103 	  0.971 	   36.5 	      0 
+  176.652	 DELIVER	   104 	   2.98 	   36.5 	      0 
+  177.397	 DELIVER	   105 	    2.2 	   30.6 	      0 
+  179.136	 DELIVER	   106 	   2.81 	     31 	      0 
+  179.354	 DELIVER	   107 	   1.56 	   26.7 	      0 
+  180.635	 DELIVER	   108 	   2.11 	   26.8 	      0 
+  180.885	 DELIVER	   109 	  0.973 	   26.4 	      0 
+  181.040	 DELIVER	   110 	   1.29 	     24 	      0 
+  182.026	 DELIVER	   111 	    1.1 	   22.6 	      0 
+  182.602	 DELIVER	   112 	   2.59 	   23.1 	      0 
+  182.669	 DELIVER	   113 	  0.627 	     21 	      0 
+  183.148	 DELIVER	   114 	   1.85 	   20.9 	      0 
+  183.764	 DELIVER	   115 	   0.47 	   21.2 	      0 
+  186.367	 DELIVER	   116 	   2.53 	   22.3 	      0 
+  186.512	 DELIVER	   117 	   1.62 	   20.8 	      0 
+  187.247	 DELIVER	   118 	   2.01 	   21.4 	      0 
+  187.985	 DELIVER	   119 	    2.8 	   21.4 	      0 
+  188.482	 DELIVER	   120 	   2.93 	   20.9 	      0 
+  189.970	 DELIVER	   121 	   2.73 	   21.9 	      0 
+  190.222	 DELIVER	   122 	   1.82 	   18.2 	      0 
+  191.176	 DELIVER	   123 	  0.814 	   17.1 	      0 
+  191.562	 DELIVER	   124 	   2.26 	   16.7 	      0 
+SUMMARY STATISTICS
+SERVICE[ID[7]]:
+ Time Ave. = 	  1.763 Time Sample Var. =	 0.6172
+ Event Ave. =	  1.682 Event Sample Var. =	 0.6117
+ Minimum =	 0.3715
+ Maximum =	  2.976
+SYSTEM[ID[7]]:
+ Time Ave. = 	  14.28 Time Sample Var. =	  105.2
+ Event Ave. =	   16.9 Event Sample Var. =	  156.9
+ Minimum =	  4.232
+ Maximum =	  121.6
+RATIO[0]:
+ Time Ave. = 	      0 Time Sample Var. =	      0
+ Event Ave. =	      0 Event Sample Var. =	      0
+ Minimum =	      0
+ Maximum =	      0
