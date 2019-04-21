@@ -3,76 +3,45 @@ import math
 from scipy import stats
 
 # Number of trials
-num = 1000
+num = 50
 
 # Which sigma model
-version = "3_1_Sim"
+version = "28"
 
 # Complete filepath/filename
-dir_file = "../" + str(version) + "/" + str(num) + "/"
+dir_file = version + "/"
 file_nam = version + "_run_"
-
-# Alpha/Mean for variance reduction with control variates 
-alpha = -4.4
-alpha2 = -5.2
-service = 1.68333333334
-
-# Averages of sojourn time for each trial
-grand_average = []
-
-# Averages of sojourn time for each trial
-grand_wait = []
-
-# Ratio of customers who wait more than 15 minutes
-grand_cust15 = []
-
-# Ratio of time queue 0 is longer than 4 for each trial
-grand_ratio4 = []
-
-# Ratio of time queue 0 is longet than 8 for each trial
-grand_ratio8 = []
-
-# Calculated variance for average soujourn time and ratios 
-average_var = 0
-ratio_var4 = 0
-ratio_var8 = 0
-cust_var = 0
-wait_var = 0
 
 # Variable for confidence interval
 student = stats.t.ppf(1 - 0.025, (num - 1))
 
+grand_group_size = []
+grand_total_wait = []
+grand_size_wait = []
+grand_num_size = []
+grand_num_tour = []
+grand_num_no_tour = []
+grand_empty_spot = []
+
 # Iterate through all trials
 for i in range(num):
-    # Variable for finishing time of trial
-    max_time = 0
-
-    # Accumulator for average
-    average = 0
-
-    # Accumulator for customers waiting more than 15
-    cust = 0
-    
-    # Variable for ratio 4
-    ratio4 = 0
-
-    # Variable for ratio 8
-    ratio8 = 0
-
     # Open csv file
     data = open(dir_file + file_nam + str(i) + ".csv")
     
     # Set up csv reader
     csv_reader = csv.reader(data, delimiter='\t')
     
-    # Variable to ignor first row
+    # Variable to ignore first row
     line_count = 0
 
-    # Variable to keep count of the number of customers
-    count = 0
-
-    # Variable to keep coun of wait time
-    wait = 0
+    group_enter = 0
+    group_exit = 0
+    num_enter = 0
+    num_exit = 0
+    num_empty = 0
+    total_wait = 0
+    size_wait = [0] * 12
+    num_size = [0] * 12
 
     # Iterate through each customer for stats
     for row in csv_reader:
@@ -85,125 +54,121 @@ for i in range(num):
             line_count += 1
             continue
 
-        # Ignore customers with sojourn time longer than 35 (error in simulation)
-        if float(row[4]) > 40:
+        # 1 - ENTER/EXIT/LEAVE
+        # 3 - Size of group entering system 
+        # 4 - Size of group starting tour 
+        # 5 - Wait time 
+        # 6 - Number of empty tour spots
+        
+        if row[1] == "  ENTER":
+            group_enter += 1
+            num_enter += int(row[3])
+        if row[1] == "   EXIT":
+            group_exit += 1
+            num_exit += int(row[4])
+            total_wait += float(row[5])
+            num_size[int(row[4])] += 1
+            size_wait[int(row[4])] += float(row[5])
+        if row[1] == "  LEAVE":
+            num_empty += int(row[6])
+
+    grand_group_size.append(num_enter/group_enter)
+    grand_total_wait.append(total_wait/group_exit)
+    for i in range(12):
+        if num_size[i] == 0:
             continue
-
-        # Running sum for average sojourn
-        average += float(row[4]) + alpha * (float(row[3]) - service)
-
-        # Running sum for average wait
-        wait += float(row[7]) + alpha2 * (float(row[3]) - service)
-        
-        # Update max_time
-        max_time = float(row[0])
-        
-        # Update ratio8 time
-        ratio8 = float(row[5])
-        
-        # Update ratio4 time
-        ratio4 = float(row[6])
-
-        # Keep count of number of customers
-        count += 1
-
-        # Keep count of customers spending more than 15 minutes in system
-        if float(row[4]) > 15:
-            cust += 1
-
-    # Calculate average sojourn
-    average /= count
-    
-    # Calculate average wait
-    wait /= count
-
-    # Calculate average customers
-    cust /= count
-    
-    # Append average, ratio4, cust15, wait, and ratio8
-    grand_average.append(average)
-    grand_ratio4.append(ratio4/max_time)
-    grand_ratio8.append(ratio8/max_time)
-    grand_cust15.append(cust)
-    grand_wait.append(wait)
+        size_wait[i] = size_wait[i]/num_size[i]
+    grand_size_wait.append(size_wait)
+    grand_num_tour.append(num_exit)
+    grand_num_no_tour.append(num_enter - num_exit)
+    grand_empty_spot.append(num_empty)
 
 # Open file
-file_object = open("../" + version + "/" + str(num) + "_stats.txt", "w")
+file_object = open(version + "_stats.txt", "w")
 
-# Calculated average sojourn time
-calculated_average = (sum(grand_average)/num)
-file_object.write("Average sojourn time of customer:\n")
-file_object.write("AVG: " + str(calculated_average) + "\n")
+avg_group_size = sum(grand_group_size)/50
+file_object.write("Average group size: " + str(avg_group_size) + "\n")
 
-# Calculate variance of sojourn time
-for i in grand_average:
-    average_var += (i - calculated_average)**2
-average_var /= (num - 1)
-file_object.write("VAR: " + str(average_var) + "\n")
+var_group_size = 0
+for i in grand_group_size:
+    var_group_size += (i - avg_group_size)**2
+var_group_size /= 49
+file_object.write("Variance group size: " + str(var_group_size) + "\n")
 
-# CI for sojourn
-student_delta = student*(math.sqrt(average_var)/math.sqrt(num))
-file_object.write("CI: [" + str(calculated_average - student_delta) + ", " + str(calculated_average + student_delta) + "]\n\n")
+student_delta = student*(math.sqrt(var_group_size)/math.sqrt(num))
+file_object.write("CI: [" + str(avg_group_size - student_delta) + ", " + str(avg_group_size + student_delta) + "]\n\n")
 
-# Calculated average number of customers spending more than 15 minutes in a system
-calculated_15 = (sum(grand_cust15)/num)
-file_object.write("Percentage of customers spending more than 15 minutes in the system:\n")
-file_object.write("AVG: " + str(calculated_15) + "\n")
+avg_wait_time = sum(grand_total_wait)/50
+file_object.write("Average wait time: " + str(avg_wait_time) + "\n")
 
-# Calculate variance for customer spending more than 15 minutes in the system
-for i in grand_cust15:
-    cust_var += (i - calculated_15)**2
-cust_var /= (num - 1)
-file_object.write("VAR: " + str(cust_var) + "\n")
+var_wait_time = 0
+for i in grand_total_wait:
+    var_wait_time += (i - avg_wait_time)**2
+var_wait_time /= 49
+file_object.write("Variance wait time: " + str(var_wait_time) + "\n")
 
-# CI for customers spending more than 15 minutes
-student_delta = student*(math.sqrt(cust_var)/math.sqrt(num))
-file_object.write("CI: [" + str(calculated_15 - student_delta) + ", " + str(calculated_15 + student_delta) + "]\n\n")
+student_delta = student*(math.sqrt(var_wait_time)/math.sqrt(num))
+file_object.write("CI: [" + str(avg_wait_time - student_delta) + ", " + str(avg_wait_time + student_delta) + "]\n\n")
 
-# Calculated ratio of time with line greater than 4
-calculated_ratio4 = sum(grand_ratio4)/num
-file_object.write("Percentage of time the initial queue is longer than 4:\n")
-file_object.write("AVG: " + str(calculated_ratio4) + "\n")
+avg_size_wait = [0] * 12
+total_size = [0] * 12
+for i in range(12):
+    for j in grand_size_wait:
+        if j[i] > 0:
+            avg_size_wait[i] += j[i]
+            total_size[i] += 1
+    if total_size[i] != 0:
+        avg_size_wait[i] /= total_size[i]
+    file_object.write("Average wait time " + str(i) + ": " + str(avg_size_wait[i]) + "\n")
+    var = 0
+    for j in grand_size_wait:
+        if j[i] != 0:
+            var += (j[i] - avg_size_wait[i])**2
+    if total_size[i] != 1:
+        var /= (total_size[i] - 1)
+    else:
+        file_object.write("Only 1 sample\n\n")
+        continue
+    file_object.write("Variance wait time " + str(i) + ": " + str(var) + "\n")
+    student_delta = student*(math.sqrt(var)/math.sqrt(num))
+    file_object.write("CI: [" + str(avg_size_wait[i] - student_delta) + ", " + str(avg_size_wait[i] + student_delta) + "]\n\n")
 
-# Calculate variance of time with line greater than 4
-for i in grand_ratio4:
-    ratio_var4 += (i - calculated_ratio4)**2
-ratio_var4 /= (num - 1)
-file_object.write("VAR: " + str(ratio_var4) + "\n")
 
-# CI for time line greater than 4
-student_delta = student*(math.sqrt(ratio_var4)/math.sqrt(num))
-file_object.write("CI: [" + str(calculated_ratio4 - student_delta) + ", " + str(calculated_ratio4 + student_delta) + "]\n\n")
+avg_num_tour = sum(grand_num_tour)/50
+file_object.write("Number who take the tour: " + str(avg_num_tour) + "\n")
 
-# Calculated ratio of time with line greater than 8
-calculated_ratio8 = sum(grand_ratio8)/num
-file_object.write("Percentage of time the initial queue is longer than 8:\n")
-file_object.write("AVG: " + str(calculated_ratio8) + "\n")
+var_num_tour = 0
+for i in grand_num_tour:
+    var_num_tour += (i - avg_num_tour)**2
+var_num_tour /= 49
+file_object.write("Variance number who take the tour: " + str(var_num_tour) + "\n")
 
-# Calculate variance of time with line greater than 8
-for i in grand_ratio8:
-    ratio_var8 += (i - calculated_ratio8)**2
-ratio_var8 /= (num - 1)
-file_object.write("VAR: " + str(ratio_var8) + "\n")
+student_delta = student*(math.sqrt(var_num_tour)/math.sqrt(num))
+file_object.write("CI: [" + str(avg_num_tour - student_delta) + ", " + str(avg_num_tour + student_delta) + "]\n\n")
 
-# CI for time line greater than 8
-student_delta = student*(math.sqrt(ratio_var8)/math.sqrt(num))
-file_object.write("CI: [" + str(calculated_ratio8 - student_delta) + ", " + str(calculated_ratio8 + student_delta) + "]\n\n")
+avg_num_no_tour = sum(grand_num_no_tour)/50
+file_object.write("Number who can't take the tour: " + str(avg_num_no_tour) + "\n")
 
-# Calculated average sojourn time
-calculated_wait = (sum(grand_wait)/num)
-file_object.write("Average wait time of customer:\n")
-file_object.write("AVG: " + str(calculated_wait) + "\n")
+var_num_no_tour = 0
+for i in grand_num_no_tour:
+    var_num_no_tour += (i - avg_num_no_tour)**2
+var_num_no_tour /= 49
+file_object.write("Variance number who can't take the tour: " + str(var_num_no_tour) + "\n")
 
-# Calculate variance of sojourn time
-for i in grand_wait:
-    wait_var += (i - calculated_wait)**2
-wait_var /= (num - 1)
-file_object.write("VAR: " + str(wait_var) + "\n")
+student_delta = student*(math.sqrt(var_num_no_tour)/math.sqrt(num))
+file_object.write("CI: [" + str(avg_num_no_tour - student_delta) + ", " + str(avg_num_no_tour + student_delta) + "]\n\n")
 
-# CI for sojourn
-student_delta = student*(math.sqrt(wait_var)/math.sqrt(num))
-file_object.write("CI: [" + str(calculated_wait - student_delta) + ", " + str(calculated_wait + student_delta) + "]")
+avg_empty_spot = sum(grand_empty_spot)/50
+file_object.write("Number of empty spots: " + str(avg_empty_spot) + "\n")
+
+var_empty_spot = 0
+for i in grand_empty_spot:
+    var_empty_spot += (i - avg_empty_spot)**2
+var_empty_spot /= 49
+file_object.write("Variance empty tour spots: " + str(var_empty_spot) + "\n")
+
+student_delta = student*(math.sqrt(var_empty_spot)/math.sqrt(num))
+file_object.write("CI: [" + str(avg_empty_spot - student_delta) + ", " + str(avg_empty_spot + student_delta) + "]\n\n")
 
 # Close file
 file_object.close()
