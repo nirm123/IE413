@@ -1,0 +1,118 @@
+    Time	  Event	 Count	      POISSON[2]	         VARS[4]	   WAIT[VARS[5]]	           VARS[1] 
+    0.002	  ENTER	     1 	      6 	      4 	      0 	      1 
+   29.215	  ENTER	     2 	      3 	      4 	      0 	      1 
+   29.631	  ENTER	     3 	      2 	      4 	      0 	      1 
+   38.891	  ENTER	     4 	      0 	      4 	      0 	      1 
+   45.872	  ENTER	     5 	      7 	      4 	      0 	      1 
+   53.307	  ENTER	     6 	      4 	      4 	      0 	      1 
+   53.671	  ENTER	     7 	      8 	      4 	      0 	      1 
+   60.000	   EXIT	     1 	      8 	      6 	     60 	     10 
+   60.000	   EXIT	     2 	      8 	      3 	   30.8 	      7 
+   60.000	   EXIT	     3 	      8 	      2 	   30.4 	      5 
+   60.000	   EXIT	     4 	      8 	      4 	   6.69 	      1 
+   60.000	  LEAVE	     1 	      8 	      8 	   53.7 	      1 
+   72.446	  ENTER	     8 	      3 	      8 	   53.7 	      1 
+   74.438	  ENTER	     9 	      2 	      8 	   53.7 	      1 
+  120.000	   EXIT	     5 	      2 	      7 	   74.1 	      9 
+  120.000	   EXIT	     6 	      2 	      8 	   66.3 	      1 
+  120.000	  LEAVE	     2 	      2 	      2 	   74.4 	      1 
+  127.112	  ENTER	    10 	      5 	      2 	   74.4 	      1 
+  142.161	  ENTER	    11 	      7 	      2 	   74.4 	      1 
+  143.619	  ENTER	    12 	      5 	      2 	   74.4 	      1 
+  143.833	  ENTER	    13 	      4 	      2 	   74.4 	      1 
+  150.815	  ENTER	    14 	      2 	      2 	   74.4 	      1 
+  161.419	  ENTER	    15 	      5 	      2 	   74.4 	      1 
+  175.789	  ENTER	    16 	      3 	      2 	   74.4 	      1 
+  180.000	   EXIT	     7 	      3 	      3 	    108 	     13 
+  180.000	   EXIT	     8 	      3 	      2 	    106 	     11 
+  180.000	   EXIT	     9 	      3 	      5 	   52.9 	      6 
+  180.000	   EXIT	    10 	      3 	      5 	   36.4 	      1 
+  180.000	  LEAVE	     3 	      3 	      3 	    176 	      1 
+  189.009	  ENTER	    17 	      1 	      3 	    176 	      1 
+  195.205	  ENTER	    18 	      3 	      3 	    176 	      1 
+  204.786	  ENTER	    19 	      2 	      3 	    176 	      1 
+  240.000	   EXIT	    11 	      2 	      7 	   97.8 	      9 
+  240.000	   EXIT	    12 	      2 	      4 	   96.2 	      5 
+  240.000	   EXIT	    13 	      2 	      2 	   89.2 	      3 
+  240.000	   EXIT	    14 	      2 	      1 	     51 	      2 
+  240.000	  LEAVE	     4 	      2 	      2 	    205 	      2 
+  252.596	  ENTER	    20 	      5 	      2 	    205 	      2 
+  258.552	  ENTER	    21 	      3 	      2 	    205 	      2 
+  264.374	  ENTER	    22 	      3 	      2 	    205 	      2 
+  269.974	  ENTER	    23 	      5 	      2 	    205 	      2 
+  275.540	  ENTER	    24 	      7 	      2 	    205 	      2 
+  285.531	  ENTER	    25 	      4 	      2 	    205 	      2 
+  292.445	  ENTER	    26 	      8 	      2 	    205 	      2 
+  300.000	   EXIT	    15 	      8 	      5 	    139 	     11 
+  300.000	   EXIT	    16 	      8 	      3 	    124 	      8 
+  300.000	   EXIT	    17 	      8 	      3 	    105 	      5 
+  300.000	   EXIT	    18 	      8 	      2 	   95.2 	      3 
+  300.000	  LEAVE	     5 	      8 	      8 	    292 	      3 
+  317.817	  ENTER	    27 	      2 	      8 	    292 	      3 
+  323.531	  ENTER	    28 	      2 	      8 	    292 	      3 
+  342.586	  ENTER	    29 	      5 	      8 	    292 	      3 
+  348.113	  ENTER	    30 	      2 	      8 	    292 	      3 
+  360.000	   EXIT	    19 	      2 	      5 	    107 	     11 
+  360.000	   EXIT	    20 	      2 	      3 	    101 	      8 
+  360.000	   EXIT	    21 	      2 	      3 	   95.6 	      5 
+  360.000	   EXIT	    22 	      2 	      4 	   74.5 	      1 
+  360.000	  LEAVE	     6 	      2 	      2 	    348 	      1 
+  380.345	  ENTER	    31 	      5 	      2 	    348 	      1 
+  391.110	  ENTER	    32 	      3 	      2 	    348 	      1 
+  396.017	  ENTER	    33 	      0 	      2 	    348 	      1 
+  397.985	  ENTER	    34 	      6 	      2 	    348 	      1 
+  405.468	  ENTER	    35 	      4 	      2 	    348 	      1 
+  406.153	  ENTER	    36 	      2 	      2 	    348 	      1 
+  411.828	  ENTER	    37 	      2 	      2 	    348 	      1 
+  415.352	  ENTER	    38 	      0 	      2 	    348 	      1 
+  420.000	   EXIT	    23 	      0 	      5 	    150 	     11 
+  420.000	   EXIT	    24 	      0 	      7 	    144 	      4 
+  420.000	   EXIT	    25 	      0 	      2 	    102 	      2 
+  420.000	  LEAVE	     7 	      0 	     -1 	    415 	      2 
+  421.687	  ENTER	    39 	      6 	     -1 	    415 	      2 
+  423.869	  ENTER	    40 	      1 	     -1 	    415 	      2 
+  434.904	  ENTER	    41 	      4 	     -1 	    415 	      2 
+  478.061	  ENTER	    42 	      4 	     -1 	    415 	      2 
+  480.000	   EXIT	    26 	      4 	      8 	    188 	      8 
+  480.000	   EXIT	    27 	      4 	      2 	    156 	      6 
+  480.000	   EXIT	    28 	      4 	      5 	    137 	      1 
+  480.000	  LEAVE	     8 	      4 	      4 	    478 	      1 
+  485.203	  ENTER	    43 	      1 	      4 	    478 	      1 
+  491.093	  ENTER	    44 	      6 	      4 	    478 	      1 
+  493.318	  ENTER	    45 	      4 	      4 	    478 	      1 
+  493.585	  ENTER	    46 	      1 	      4 	    478 	      1 
+  498.979	  ENTER	    47 	      7 	      4 	    478 	      1 
+  502.093	  ENTER	    48 	      3 	      4 	    478 	      1 
+  540.000	   EXIT	    29 	      3 	      2 	    192 	     14 
+  540.000	   EXIT	    30 	      3 	      5 	    160 	      9 
+  540.000	   EXIT	    31 	      3 	      3 	    149 	      6 
+  540.000	   EXIT	    32 	      3 	      4 	    135 	      2 
+  540.000	   EXIT	    33 	      3 	      1 	    116 	      1 
+  540.000	  LEAVE	     9 	      3 	      3 	    502 	      1 
+  600.000	   EXIT	    34 	      3 	      6 	    202 	     10 
+  600.000	   EXIT	    35 	      3 	      2 	    194 	      8 
+  600.000	   EXIT	    36 	      3 	      2 	    188 	      6 
+  600.000	   EXIT	    37 	      3 	      4 	    165 	      2 
+  600.000	   EXIT	    38 	      3 	      1 	    115 	      1 
+  600.000	  LEAVE	    10 	      3 	      3 	    502 	      1 
+SUMMARY STATISTICS
+POISSON[2]:
+ Time Ave. = 	  3.323 Time Sample Var. =	  2.455
+ Event Ave. =	  3.646 Event Sample Var. =	  5.208
+ Minimum =	      0
+ Maximum =	      8
+VARS[4]:
+ Time Ave. = 	    3.3 Time Sample Var. =	   4.17
+ Event Ave. =	  3.427 Event Sample Var. =	  4.911
+ Minimum =	     -1
+ Maximum =	      8
+WAIT[VARS[5]]:
+ Time Ave. = 	  353.5 Time Sample Var. =	3.233e+04
+ Event Ave. =	  191.3 Event Sample Var. =	2.136e+04
+ Minimum =	      0
+ Maximum =	  502.1
+VARS[1]:
+ Time Ave. = 	   1.24 Time Sample Var. =	 0.3024
+ Event Ave. =	  3.198 Event Sample Var. =	  10.97
+ Minimum =	      1
+ Maximum =	     14
