@@ -62,7 +62,7 @@ Number who can't take the tour: 77.4
 Variance number who can't take the tour: 960.3265306122452
 CI: [68.59298509486312, 86.20701490513689]
 
-Number of empty spots: 12.5
-Variance empty tour spots: 5.316326530612245
-CI: [11.844722748097137, 13.155277251902863]
+Number of empty spots: 1.25
+Variance empty tour spots: 0.05316326530612244
+CI: [1.1844722748097138, 1.3155277251902862]
 

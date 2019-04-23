@@ -81,7 +81,7 @@ for i in range(num):
     grand_size_wait.append(size_wait)
     grand_num_tour.append(num_exit)
     grand_num_no_tour.append(num_enter - num_exit)
-    grand_empty_spot.append(num_empty)
+    grand_empty_spot.append(num_empty/10)
 
 # Open file
 file_object = open(version + "_stats.txt", "w")
